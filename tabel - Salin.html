@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0" />
+<title>elemen selector</title>
+<style>
+
+* {
+margin: 0;
+padding: 0;
+}
+
+body {
+background-color: grey;
+font-family: sans-serif;
+}
+
+#main-container {
+width: 80%;
+
+background-color: white;
+padding: 15px;
+margin: auto;
+}
+
+#main-container h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+#table-container {
+width: 80%;
+margin: auto;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+
+td,
+th {
+border: 1px solid black;
+padding: 5px;
+}
+
+table td:first-child {
+text-align: center;
+
+}
+
+table td:last-child {
+text-align: right;
+}
+
+button {
+padding: 5px;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" />
+<title>Elemen Selector</title>
+
+<script src="https://code.jquery.com/jquery-
+3.6.0.min.js"></script>
+
+</head>
+<body>
+<div id="main-container">
+  <title>Tabel Laporan Stok Barang</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: middle;
+        }
+        th {
+            background-color: #3aac95;
+            color: white;
+        }
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+</head>
+<body>
+
+  <h2 align="center">LAPORAN STOK BARANG PT Selalu Ceria</h2>
+  <h3 align="center">Periode 1 - 31 Oktober 2024</h3>
+
+  <table border="1" width="100%" cellspacing="0" cellpadding="4">
+    <tr>
+      <th rowspan="2">No</th>
+      <th rowspan="2">Kode Barang</th>
+      <th rowspan="2">Nama Barang</th>
+      <th rowspan="2">Harga Barang</th>
+      <th rowspan="2">Stok Awal</th>
+      <th colspan="2">1-Oct</th>
+      <th colspan="2">2-Oct</th>
+      <th colspan="2">3-Oct</th>
+      <th colspan="2">4-Oct</th>
+      <th colspan="2">5-Oct</th>
+      <th rowspan="2">Sisa Stok</th>
+      <th rowspan="2">Nilai Persediaan Akhir</th>
+    </tr>
+    <tr>
+      <th>Masuk</th><th>Keluar</th>
+      <th>Masuk</th><th>Keluar</th>
+      <th>Masuk</th><th>Keluar</th>
+      <th>Masuk</th><th>Keluar</th>
+      <th>Masuk</th><th>Keluar</th>
+    </tr>
+
+    <!-- Data Barang -->
+    <tr><td>1</td><td>BJ001</td><td>Kemeja polos pria</td><td>80,000</td><td>100</td><td>30</td><td>20</td><td>0</td><td>10</td><td>0</td><td>5</td><td>50</td><td>0</td><td>10</td><td>5</td><td>150</td><td>12,000,000</td></tr>
+    <tr><td>2</td><td>BJ002</td><td>Blouse Wanita</td><td>90,000</td><td>80</td><td>1</td><td>10</td><td>20</td><td>5</td><td>10</td><td>15</td><td>20</td><td>10</td><td>5</td><td>0</td><td>96</td><td>8,640,000</td></tr>
+    <tr><td>3</td><td>BJ003</td><td>Celana Jeans pria</td><td>150,000</td><td>50</td><td>10</td><td>5</td><td>0</td><td>0</td><td>20</td><td>10</td><td>10</td><td>5</td><td>50</td><td>0</td><td>120</td><td>18,000,000</td></tr>
+    <tr><td>4</td><td>BJ004</td><td>Rok Mini Wanita</td><td>110,000</td><td>60</td><td>5</td><td>5</td><td>10</td><td>5</td><td>0</td><td>0</td><td>20</td><td>10</td><td>5</td><td>5</td><td>75</td><td>8,250,000</td></tr>
+    <tr><td>5</td><td>BJ005</td><td>Jaket Denim Pria</td><td>220,000</td><td>40</td><td>10</td><td>5</td><td>5</td><td>5</td><td>10</td><td>0</td><td>0</td><td>5</td><td>10</td><td>10</td><td>50</td><td>11,000,000</td></tr>
+    <tr><td>6</td><td>BJ006</td><td>Dress Mini Wanita</td><td>120,000</td><td>30</td><td>0</td><td>5</td><td>10</td><td>0</td><td>5</td><td>0</td><td>5</td><td>10</td><td>5</td><td>20</td><td>20</td><td>2,400,000</td></tr>
+    <tr><td>7</td><td>BJ007</td><td>Tank Top Pria</td><td>50,000</td><td>50</td><td>0</td><td>0</td><td>0</td><td>5</td><td>0</td><td>10</td><td>0</td><td>5</td><td>0</td><td>20</td><td>10</td><td>500,000</td></tr>
+    <tr><td>8</td><td>BJ008</td><td>Sweater Kasual Wanita</td><td>180,000</td><td>75</td><td>10</td><td>0</td><td>5</td><td>5</td><td>5</td><td>0</td><td>10</td><td>10</td><td>10</td><td>0</td><td>95</td><td>17,100,000</td></tr>
+    <tr><td>9</td><td>BJ009</td><td>Kemeja Kerja Pria</td><td>130,000</td><td>60</td><td>0</td><td>10</td><td>5</td><td>0</td><td>10</td><td>5</td><td>10</td><td>5</td><td>0</td><td>45</td><td>20</td><td>2,600,000</td></tr>
+    <tr><td>10</td><td>BJ010</td><td>Cardingan Wanita</td><td>160,000</td><td>40</td><td>5</td><td>0</td><td>0</td><td>5</td><td>10</td><td>5</td><td>5</td><td>0</td><td>0</td><td>30</td><td>20</td><td>3,200,000</td></tr>
+
+  </table>
+
+</body>
+</html>
+
+</tr>
+</tbody>
+</table>
+<button>Change to Colorfull</button>
+</div>
+</div>
+</body>
+</html>
+
+
+<script>
+$(document).ready(function () {
+colorLess();
+
+$("button").click(function () {
+var textButton = $("button").text();
+
+if (textButton == "Change to Colorfull") {
+$(this).text("Change to Colorless");
+colorFull();
+} else {
+$(this).text("Change to Colorfull");
+colorLess();
+}
+});
+
+function colorLess() {
+
+$("thead").css("background", "black");
+$("thead").css("color", "white");
+
+$("tbody tr:even").css("background", "#CCCCCC");
+$("tbody tr:even").css("color", "black");
+$("tbody tr:nth-child(2)").css("background", "white");
+$("tbody tr:nth-child(2)").css("color", "black");
+$("button").css("background", "#CCCCCC");
+$("button").css("color", "black");
+}
+
+function colorFull() {
+$("thead").css("background", "red");
+$("thead").css("color", "white");
+$("tbody tr:even").css("background", "blue");
+$("tbody tr:even").css("color", "white");
+$("tbody tr:nth-child(2)").css("background", "yellow");
+$("tbody tr:nth-child(2)").css("color", "black");
+$("button").css("background", "red");
+$("button").css("color", "white");
+}
+});
+</script>
