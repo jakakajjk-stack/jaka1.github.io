@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Sederhana</title>
+    <title>Biodata Jaka</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <style>
         :root {
@@ -68,7 +68,7 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -80,7 +80,7 @@
             transform: scaleX(0);
             transition: transform 0.3s ease-in-out;
         }
-        
+
         .nav-link:hover::after {
             transform: scaleX(1);
         }
@@ -92,7 +92,7 @@
             z-index: 20;
             font-weight: 600;
         }
-        
+
         .dropdown {
             position: relative;
             display: inline-block;
@@ -112,7 +112,7 @@
         .dropdown-button:hover {
             background-color: var(--secondary-color);
         }
-        
+
         .dropdown-button svg {
             width: 24px;
             height: 24px;
@@ -134,7 +134,7 @@
         .dropdown-content.show {
             display: block;
         }
-        
+
         .dropdown-content a {
             color: var(--primary-color);
             text-decoration: none;
@@ -147,65 +147,101 @@
         .dropdown-content a:hover {
             background-color: var(--bg-color-light);
         }
-        
+
         main {
-            padding: 100px 300px;
-            max-width: 800px;
-            margin: 200px auto 210px;
+            padding-top: 150px;
+            padding-bottom: 80px;
+            max-width: 900px;
+            margin: auto;
             background-color: var(--card-bg);
             border-radius: 60px;
             box-shadow: var(--shadow);
             text-align: center;
         }
-        
-        h2 {
+
+        .container-biodata {
+            background-color: transparent;
+            padding: 0;
+            box-shadow: none;
+            text-align: left;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
             font-size: 2.2em;
             color: var(--primary-color);
-            margin-bottom: 10px;
         }
         
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
         p {
             font-size: 1em;
             color: var(--text-color);
             margin-bottom: 30px;
         }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+            transition: transform 0.3s ease;
+            border-radius: 50%; /* Mengubah bentuk menjadi lingkaran */
+        }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
+        .profile-img:hover {
+            transform: scale(1.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            color: var(--text-color);
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+            vertical-align: top;
         }
         
-        .btn {
-            padding: 12px 28px;
-            border: 2px solid var(--secondary-color);
-            background-color: transparent;
+        tr:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
             color: var(--secondary-color);
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary-color);
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .social-link {
             text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 700;
-            transition: color 0.3s ease;
-            margin-top: 10px;
         }
-        
-        .social-link:hover {
-            color: var(--primary-color);
+
+        a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -216,9 +252,22 @@
             font-size: 0.9em;
             margin-top: auto;
         }
+        
         footer p {
             color: white;
             margin: 0;
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+            margin-bottom: 50px;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -231,6 +280,7 @@
                 </svg>
             </span>
             <div id="myDropdown" class="dropdown-content">
+                <a href="https://jakakajjk-stack.github.io/jaka1.github.io/WEB%20jaka.html">Beranda</a>
                 <a href="https://jakakajjk-stack.github.io/jaka1.github.io/Biodata.html">Biodata</a>
                 <a href="https://ikmi.ac.id/">STMIK ikmi Cirebon</a>
                 <a href="https://www.tokopedia.com/">E-commerce</a>
@@ -244,20 +294,65 @@
         <div class="header-content">
             <h1>Selamat Datang Di Web Sederhana, JAKA</h1>
             <nav>
-                <a href="https://jakakajjk-stack.github.io/jaka1.github.io/WEB%20jaka.html"class="nav-link">Beranda</a>
+                <a href="https://jakakajjk-stack.github.io/jaka1.github.io/WEB%20jaka.html" class="nav-link">Beranda</a>
                 <a href="https://jakakajjk-stack.github.io/jaka1.github.io/tentang.html"class="nav-link">Tentang</a>
-                <a href=" https://jakakajjk-stack.github.io/jaka1.github.io/stok%20opname.html"class="nav-link">Projek Tabel</a>
+                <a href="https://jakakajjk-stack.github.io/jaka1.github.io/stok%20opname.html"class="nav-link">Projek Tabel</a>
             </nav>
         </div>
     </header>
-    
-    <main>
-        <h2>Halaman Utama</h2>
-        <p>Let See My program</p>
 
-        <div class="button-container">
-            <button class="btn" onclick="showAlert()">Klik Saya</button>
-            <button class="btn" onclick="changeBackground()">Ganti Background</button>
+    <main>
+        <div class="container-biodata">
+            <h1>BIODATA DIRI</h1>
+
+            <div class="section">
+                <h2>Informasi</h2>
+                <table>
+                    <tr>
+                        <td rowspan="12" style="width: 200px; text-align: center;">
+                            <img src="https://raw.githubusercontent.com/jakakajjk-stack/jaka1.github.io/refs/heads/main/jaka.jpg" alt="Foto Profil" class="profile-img">
+                        </td>
+                        <th>Nama</th><td>JAKA</td>
+                    </tr>
+                    <tr><th>Tempat</th><td>Cirebon</td></tr>
+                    <tr><th>Tgl. Lahir</th><td>10 Juni 2005</td></tr>
+                    <tr><th>Agama</th><td>Islam</td></tr>
+                    <tr><th>Alamat</th><td>JL. Ledeng 7, KEC. Harjamukti, KEL. Kalijaga</td></tr>
+                    <tr><th>Email</th><td>jakakaj.jk@gmail.com</td></tr>
+                    <tr><th>No. HP</th><td>085798323106</td></tr>
+                    <tr><th>Tinggi Badan</th><td>170 cm</td></tr>
+                    <tr><th>Berat Badan</th><td>51 KG</td></tr>
+                    <tr><th>Hobby</th><td>Membaca, main game, cium kucing</td></tr>
+                    <tr><th>Jenis Kelamin</th><td>Pria sejati</td></tr>
+                    <tr><th>Website</th><td><a href="https://www.malasngoding.com" target="_blank">www.malasngoding.com</a></td></tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Pendidikan</h2>
+                <ul>
+                    <li><b>2012 - 2018</b> SDN Kebon Pelok</li>
+                    <li><b>2018 - 2021</b> SMP PGRI Astra Insani</li>
+                    <li><b>2021 - 2024</b> SMK Asyifa Depok</li>
+                    <li><b>2024 - 2027</b> STIMIK IKMI CIREBON</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Pengalaman Kerja</h2>
+                <ul>
+                    <li><i>- Belum ada pengalaman kerja formal -</i></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Keahlian</h2>
+                <ul>
+                    <li>Zahir APP</li>
+                    <li>Masak Mie Rebus dan Nasi Goreng</li>
+                    <li>Pembuat Laporan Keuangan Dasar</li>
+                </ul>
+            </div>
         </div>
     </main>
 
@@ -266,15 +361,6 @@
     </footer>
     
     <script>
-        function showAlert(){
-            alert("Halo, ini adalah pesan dari JAKA.");
-        }
-        
-        function changeBackground() {
-            const colors = ["#f9f9f9", "#ffe0b2", "#c8e6c9", "#bbdefb", "#f8bbd0"];
-            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        }
-        
         function toggleDropdown() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
@@ -290,6 +376,16 @@
                 }
             }
         }
+
+        const sections = document.querySelectorAll('.section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(sec => {
+                const top = sec.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    sec.classList.add('visible');
+                }
+            });
+        });
     </script>
 </body>
 </html>
