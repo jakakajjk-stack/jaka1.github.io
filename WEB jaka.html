@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sederhana</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <style>
+        :root {
+            --primary-color: #1d1e1f;
+            --secondary-color: #3498db;
+            --text-color: #2e12ce;
+            --bg-color-light: lch(82.83% 8.57 20);
+            --card-bg: #dfe9f3;
+            --shadow: 0 6px 20px rgba(250, 240, 240, 0.08);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color-light);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            text-align: center;
+            z-index: 10;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-content h1 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 700;
+            padding: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .top-left-menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 20;
+            font-weight: 600;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-button {
+            background-color: var(--primary-color);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dropdown-button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .dropdown-button svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 160px;
+            box-shadow: var(--shadow);
+            z-index: 1;
+            border-radius: var(--border-radius);
+            margin-top: 10px;
+            left: 0;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--bg-color-light);
+        }
+        
+        main {
+            padding: 100px 300px;
+            max-width: 800px;
+            margin: 200px auto 210px;
+            background-color: var(--card-bg);
+            border-radius: 60px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 1em;
+            color: var(--text-color);
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            padding: 12px 28px;
+            border: 2px solid var(--secondary-color);
+            background-color: transparent;
+            color: var(--secondary-color);
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 700;
+            transition: color 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .social-link:hover {
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: auto;
+        }
+        footer p {
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left-menu">
+        <div class="dropdown">
+            <span class="dropdown-button" onclick="toggleDropdown()">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="https://jakakajjk-stack.github.io/jaka1.github.io/Biodata.html">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+                <a href="#">Submenu 4</a>
+                <a href="#">Submenu 5</a>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="header-content">
+            <h1>Selamat Datang Di Web Sederhana, JAKA</h1>
+            <nav>
+                <a href="#" class="nav-link">Beranda</a>
+                <a href="https://github.com/Shiraori19" class="nav-link">Tentang</a>
+                <a href="https://wa.me/qr/723ED5JYTHFRN1" class="nav-link">Kontak</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Halaman Utama</h2>
+        <p>Anda berada di halaman utama. Klik Submenu 1 untuk pergi ke halaman kedua.</p>
+
+        <div class="button-container">
+            <button class="btn" onclick="showAlert()">Klik Saya</button>
+            <button class="btn" onclick="changeBackground()">Ganti Background</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Website Sederhana | Dibuat dengan HTML, CSS, dan JavaScript</p>
+    </footer>
+    
+    <script>
+        function showAlert(){
+            alert("Halo, ini adalah pesan dari JAKA.");
+        }
+        
+        function changeBackground() {
+            const colors = ["#f9f9f9", "#ffe0b2", "#c8e6c9", "#bbdefb", "#f8bbd0"];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-button') && !event.target.closest('.dropdown-button')) {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
