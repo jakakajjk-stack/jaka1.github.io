@@ -1,182 +1,213 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Biodata Jaka</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biodata Jaka</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #f0f0f0;
-      padding: 60px 20px;
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #f0f0f0;
+            padding: 60px 20px;
+        }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background-color: rgba(0,0,0,0.6);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.5);
-    }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: rgba(0,0,0,0.6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-    }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #00ffff;
-    }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #00ffff;
+        }
 
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border: 5px solid #00ffff;
-      box-shadow: 0 0 15px rgba(0,255,255,0.5);
-      transition: transform 0.3s ease;
-      border-radius: 10px;
-    }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0,255,255,0.5);
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
 
-    .profile-img:hover {
-      transform: scale(1.08);
-    }
+        .profile-img:hover {
+            transform: scale(1.08);
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 40px;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
 
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #444;
-      text-align: left;
-      vertical-align: top;
-    }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #444;
+            text-align: left;
+            vertical-align: top;
+        }
 
-    tr:hover {
-      background-color: rgba(0,255,255,0.05);
-      box-shadow: 0 0 10px rgba(0,255,255,0.3);
-      transition: 0.3s ease;
-    }
+        tr:hover {
+            background-color: rgba(0,255,255,0.05);
+            box-shadow: 0 0 10px rgba(0,255,255,0.3);
+            transition: 0.3s ease;
+        }
 
-    ul {
-      padding-left: 20px;
-      margin-bottom: 30px;
-    }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
 
-    li {
-      margin-bottom: 8px;
-    }
+        li {
+            margin-bottom: 8px;
+        }
 
-    a {
-      color: #00ffff;
-      text-decoration: none;
-    }
+        a {
+            color: #00ffff;
+            text-decoration: none;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    .section {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
-      margin-bottom: 50px;
-    }
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+            margin-bottom: 50px;
+        }
 
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gaya baru untuk navigasi di atas */
+        .header-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.8);
+            padding: 10px 20px;
+            text-align: right;
+            z-index: 1000;
+        }
+
+        .header-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>BIODATA DIRI</h1>
+    <div class="header-nav">
+        <a href="https://jakakajjk-stack.github.io/jaka1.github.io/WEB%20jaka.html">Kembali ke Beranda</a>
+    </div>
+    
+    <div class="container">
+        <h1>BIODATA DIRI</h1>
 
-    <div class="section">
-      <h2>Informasi</h2>
-      <table>
-        <tr>
-          <td rowspan="12" style="width: 200px;">
-            <img src="https://raw.githubusercontent.com/jakakajjk-stack/jaka1.github.io/refs/heads/main/jaka.jpg" alt="Foto Profil" class="profile-img">
-          </td>
-          <th>Nama</th><td>JAKA</td>
-        </tr>
-        <tr><th>Tempat</th><td>Cirebon</td></tr>
-        <tr><th>Tgl. Lahir</th><td>10 Juni 2005</td></tr>
-        <tr><th>Agama</th><td>Islam</td></tr>
-        <tr><th>Alamat</th><td>JL. Ledeng 7, KEC. Harjamukti, KEL. Kalijaga</td></tr>
-        <tr><th>Email</th><td>jakakaj.jk@gmail.com</td></tr>
-        <tr><th>No. HP</th><td>085798323106</td></tr>
-        <tr><th>Tinggi Badan</th><td>170 cm</td></tr>
-        <tr><th>Berat Badan</th><td>51 KG</td></tr>
-        <tr><th>Hobby</th><td>Membaca, main game, cium kucing</td></tr>
-        <tr><th>Jenis Kelamin</th><td>Pria</td></tr>
-        <tr><th>Website</th><td><a href="https://www.malasngoding.com" target="_blank">www.malasngoding.com</a></td></tr>
-      </table>
+        <div class="section">
+            <h2>Informasi</h2>
+            <table>
+                <tr>
+                    <td rowspan="12" style="width: 200px;">
+                        <img src="https://raw.githubusercontent.com/jakakajjk-stack/jaka1.github.io/refs/heads/main/jaka.jpg" alt="Foto Profil" class="profile-img">
+                    </td>
+                    <th>Nama</th><td>JAKA</td>
+                </tr>
+                <tr><th>Tempat</th><td>Cirebon</td></tr>
+                <tr><th>Tgl. Lahir</th><td>10 Juni 2005</td></tr>
+                <tr><th>Agama</th><td>Islam</td></tr>
+                <tr><th>Alamat</th><td>JL. Ledeng 7, KEC. Harjamukti, KEL. Kalijaga</td></tr>
+                <tr><th>Email</th><td>jakakaj.jk@gmail.com</td></tr>
+                <tr><th>No. HP</th><td>085798323106</td></tr>
+                <tr><th>Tinggi Badan</th><td>170 cm</td></tr>
+                <tr><th>Berat Badan</th><td>51 KG</td></tr>
+                <tr><th>Hobby</th><td>Membaca, main game, cium kucing</td></tr>
+                <tr><th>Jenis Kelamin</th><td>Pria</td></tr>
+                <tr><th>Website</th><td><a href="https://www.malasngoding.com" target="_blank">www.malasngoding.com</a></td></tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Pendidikan</h2>
+            <ul>
+                <li><b>2012 - 2018</b> SDN Kebon Pelok</li>
+                <li><b>2018 - 2021</b> SMP PGRI Astra Insani</li>
+                <li><b>2021 - 2024</b> SMK Asyifa Depok</li>
+                <li><b>2024 - 2027</b> STIMIK IKMI CIREBON</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Pengalaman Kerja</h2>
+            <ul>
+                <li><i>- Belum ada pengalaman kerja formal -</i></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Keahlian</h2>
+            <ul>
+                <li>Zahir APP</li>
+                <li>Masak Mie Rebus dan Nasi Goreng</li>
+                <li>Pembuat Laporan Keuangan Dasar</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="section">
-      <h2>Pendidikan</h2>
-      <ul>
-        <li><b>2012 - 2018</b> SDN Kebon Pelok</li>
-        <li><b>2018 - 2021</b> SMP PGRI Astra Insani</li>
-        <li><b>2021 - 2024</b> SMK Asyifa Depok</li>
-        <li><b>2024 - 2027</b> STIMIK IKMI CIREBON</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Pengalaman Kerja</h2>
-      <ul>
-        <li><i>- Belum ada pengalaman kerja formal -</i></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Keahlian</h2>
-      <ul>
-        <li>Zahir APP</li>
-        <li>Masak Mie Rebus dan Nasi Goreng</li>
-        <li>Pembuat Laporan Keuangan Dasar</li>
-      </ul>
-    </div>
-  </div>
-
-  <script>
-    const sections = document.querySelectorAll('.section');
-    window.addEventListener('scroll', () => {
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-          sec.classList.add('visible');
-        }
-      });
-    });
-  </script>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(sec => {
+                const top = sec.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    sec.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
