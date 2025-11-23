@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERABI MIMI CIREBON - 10 Varian Menu Terlengkap (Gaya Klasik-Elegansi)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================================== */
+        /* TEMA TRADISIONAL INDONESIA & BATIK  */
+        /* ==================================== */
+        :root {
+            --color-primary: #8B4513; 
+            --color-secondary: #C07C4A; 
+            --color-accent: #25D366; 
+            --color-light: #FFFAF0; 
+            --color-gold: #FFD700; 
+            --color-sweet: #e91e63; 
+            --color-savory: #ff9800; 
+            --color-custom: #007bff; 
+        }
+
+        /* PERUBAHAN FONT UTAMA KE GAYA KLASIK-ELEGAN */
+        body { 
+            font-family: 'Merriweather', serif; /* Teks Badan: Mudah dibaca */
+            margin: 0; padding: 0; background-color: var(--color-light); color: #333; 
+        }
+        
+        /* Font untuk Judul Utama dan Sub-judul */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+        }
+        
+        .header { 
+            background-color: var(--color-primary); color: white; padding: 10px 0; border-bottom: 5px solid var(--color-secondary); 
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        .nav-bar { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: 0 auto; }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--color-gold); object-fit: cover; }
+        .logo-text { font-size: 1.8em; font-weight: bold; margin: 0; color: var(--color-gold); }
+        .nav-links a { color: white; margin-left: 20px; text-decoration: none; padding: 8px 15px; border-radius: 4px; }
+        .nav-links a:hover { background-color: var(--color-secondary); }
+        .container { width: 90%; max-width: 1200px; margin: 40px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { color: var(--color-primary); text-align: center; margin-bottom: 30px; border-bottom: 3px dashed var(--color-secondary); padding-bottom: 15px; }
+        
+        /* === ANIMASI KEYFRAMES (Tidak Berubah) === */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        /* Hero Section & WhatsApp Button Styling */
+        #hero { background-color: var(--color-secondary); color: white; padding: 70px 0; text-align: center; margin-bottom: 40px; }
+        #hero h1 { font-size: 3.5em; margin-bottom: 10px; text-shadow: 2px 2px #333; }
+        
+        .whatsapp-button { 
+            background-color: var(--color-accent); color: white; padding: 10px 20px; 
+            text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-flex; 
+            align-items: center; justify-content: center; margin-top: 15px;
+            text-transform: uppercase; box-shadow: 0 4px #1c8d45; transition: all 0.3s;
+            animation: pulse 2s infinite; 
+        }
+        .whatsapp-button:hover { background-color: #1c8d45; transform: scale(1.05); animation: none; }
+        .whatsapp-icon { margin-right: 8px; font-size: 1.2em; }
+
+        /* Product Grid & Article Styling */
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+            margin-bottom: 40px;
+        }
+        .product-article { 
+            border: 2px solid var(--color-secondary); border-radius: 12px; overflow: hidden; 
+            text-align: center; padding-bottom: 20px; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+        .product-article:hover { 
+            transform: translateY(-8px) scale(1.02); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
+        }
+        
+        /* Pewarnaan Judul berdasarkan Varian */
+        .sweet h3 { color: var(--color-sweet); }
+        .savory h3 { color: var(--color-savory); }
+        .custom h3 { color: var(--color-custom); }
+        
+        .price { font-size: 1.6em; color: var(--color-primary); font-weight: bold; margin: 10px 0; }
+        
+        /* Modifikasi Layout */
+        .flex-content { display: block; }
+        
+        /* Styling Khusus Bagian Kontak */
+        #kontak-info {
+            background-color: var(--color-light); 
+            padding: 30px; 
+            border-radius: 10px; 
+            border: 2px solid var(--color-secondary);
+            text-align: center;
+        }
+        #kontak-info h2 {
+            border-bottom: 2px solid var(--color-primary); 
+            display: inline-block;
+        }
+        .kontak-detail {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .detail-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+            padding: 15px;
+            border-left: 3px solid var(--color-gold);
+        }
+        .detail-item p { margin: 5px 0; }
+        .detail-item strong {
+            color: var(--color-primary);
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer { background-color: var(--color-primary); color: white; text-align: center; padding: 25px 0; margin-top: 40px; border-top: 3px solid var(--color-gold); }
+        .footer a { color: var(--color-gold); text-decoration: none; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-bar">
+            <div class="logo-container">
+                <img src="serabi mimi.png" alt="Logo Serabi Mimi Cirebon" class="logo-img">
+                <h1 class="logo-text">SERABI MIMI CIREBON</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#hero">Beranda</a>
+                <a href="#produk">Menu Serabi</a>
+                <a href="#testimoni">Testimoni</a>
+                <a href="#kontak-info">Kontak & Info</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container" style="background: none; box-shadow: none; padding: 0;">
+            <h1>Serabi Mimi Cirebon: 10 Varian Pilihan Terbaik</h1>
+            <p>Manis dan Gurih! Serabi khas Cirebon dengan rasa otentik dan modern.</p>
+            <a href="https://wa.me/6281234567890?text=Halo%20Mimi%20Cirebon%2C%20saya%20mau%20pesan%20serabi%20dari%20website%20anda.%0ANama%3A%20%0ALokasi%3A%20Cirebon%2F%20%0APesanan%3A%20" 
+                class="whatsapp-button" target="_blank">
+                <i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <div class="main-content">
+            <section id="produk">
+                <h2>Daftar Menu Serabi Lengkap (Manis & Gurih)</h2>
+
+                <div class="product-grid">
+                    
+                    <div style="grid-column: 1 / -1; text-align: center;">
+                        <h3 style="color: var(--color-savory); border-bottom: 2px dashed var(--color-savory); padding-bottom: 5px;">VARIAN GURIH (SAVORY)</h3>
+                    </div>
+
+                    <article class="product-article savory" data-id="S01">
+                        <figure><img src="originall.png" alt="Serabi Original"><figcaption>Klasik Polos</figcaption></figure>
+                        <h3>1. Serabi Original (Polos)</h3>
+                        <p>Serabi gurih polos, bisa disajikan dengan kuah kinca atau sambal.</p>
+                        <p class="price">Rp 5.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Gurih%3A%20Serabi%20Original.%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+
+                    <article class="product-article savory" data-id="S02">
+                        <figure><img src="oncom.png" alt="Serabi Oncom"><figcaption>Pedas Gurih Khas Sunda</figcaption></figure>
+                        <h3>2. Serabi Oncom</h3>
+                        <p>Serabi gurih dengan topping tumisan oncom pedas yang legendaris.</p>
+                        <p class="price">Rp 8.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Gurih%3A%20Serabi%20Oncom.%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+
+                    <article class="product-article savory" data-id="S03">
+                        <figure><img src="dage.png" alt="Serabi Dage"><figcaption>Topping Dage Bumbu</figcaption></figure>
+                        <h3>3. Serabi Dage</h3>
+                        <p>Topping dage (fermentasi kedelai) yang gurih dengan bumbu spesial Cirebon.</p>
+                        <p class="price">Rp 9.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Gurih%3A%20Serabi%20Dage.%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+
+                    <article class="product-article savory" data-id="S04">
+                        <figure><img src="telur.png" alt="Serabi Telur"><figcaption>Serabi dengan Telur</figcaption></figure>
+                        <h3>4. Serabi Telur</h3>
+                        <p>Serabi asin dengan balutan telur orak-arik yang gurih.</p>
+                        <p class="price">Rp 10.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Gurih%3A%20Serabi%20Telur.%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+
+                    <article class="product-article savory" data-id="S05">
+                        <figure><img src="ayam.png" alt="Serabi Ayam Suwir"><figcaption>Isian Ayam Suwir</figcaption></figure>
+                        <h3>5. Serabi Ayam Suwir</h3>
+                        <p>Serabi dengan isian ayam suwir berbumbu khas. Menu favorit untuk makan berat!</p>
+                        <p class="price">Rp 12.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Gurih%3A%20Serabi%20Ayam%20Suwir.%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+
+                    <div style="grid-column: 1 / -1; text-align: center; margin-top: 30px;">
+                        <h3 style="color: var(--color-sweet); border-bottom: 2px dashed var(--color-sweet); padding-bottom: 5px;">VARIAN MANIS (SWEET)</h3>
+                    </div>
+
+                    <article class="product-article sweet" data-id="S06">
+                        <figure><img src="gula.png" alt="Serabi Gula Merah"><figcaption>Kuah Kinca Gula Aren Asli</figcaption></figure>
+                        <h3>6. Serabi Gula Merah (Kinca)</h3>
+                        <p>Serabi otentik disajikan dengan kuah santan kental dan lelehan gula merah murni.</p>
+                        <p class="price">Rp 8.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Manis%3A%20Serabi%20Gula%20Merah%20(Kinca).%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+
+                    <article class="product-article sweet" data-id="S07">
+                        <figure><img src="coklat.png" alt="Serabi Coklat Meses"><figcaption>Cokelat Manis</figcaption></figure>
+                        <h3>7. Serabi Coklat Meses</h3>
+                        <p>Serabi dengan taburan meses cokelat yang lumer saat dipanaskan.</p>
+                        <p class="price">Rp 9.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Manis%3A%20Serabi%20Coklat%20Meses.%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+
+                    <article class="product-article sweet" data-id="S08">
+                        <figure><img src="keju.png" alt="Serabi Keju Parut"><figcaption>Keju Gurih</figcaption></figure>
+                        <h3>8. Serabi Keju Parut</h3>
+                        <p>Serabi lembut bertabur keju cheddar parut tebal, perpaduan rasa manis dan gurih.</p>
+                        <p class="price">Rp 10.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Manis%3A%20Serabi%20Keju%20Parut.%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+
+                    <article class="product-article sweet" data-id="S09">
+                        <figure><img src="pandan.png" alt="Serabi Pandan"><figcaption>Aroma Harum Pandan Asli</figcaption></figure>
+                        <h3>9. Serabi Pandan</h3>
+                        <p>Serabi dengan aroma alami pandan, cocok untuk dicocol kinca atau tambahan topping.</p>
+                        <p class="price">Rp 7.000,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Manis%3A%20Serabi%20Pandan.%0ATambah%20Topping%3F%20%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Pesan Ini</a>
+                    </article>
+                    
+                    <article class="product-article custom" data-id="S10">
+                        <figure><img src="varian.png" alt="Serabi Custom Topping"><figcaption>Serabi Sesuai Keinginan Anda!</figcaption></figure>
+                        <h3>10. Serabi Custom Topping</h3>
+                        <p>Pilih *topping* sesuka Anda! Harga disesuaikan tergantung kompleksitas *request*.</p>
+                        <p class="price">Harga Disesuaikan Menu,-</p>
+                        <a href="https://wa.me/6281234567890?text=Order%20Custom%3A%20Serabi%20Custom%20Topping.%0ATopping%20yang%20diinginkan%3A%20%0AJumlah%3A%20%0ANama%3A%20" class="whatsapp-button" style="border-radius: 4px; animation: none;" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i>Request Custom</a>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+        <section id="testimoni" class="container">
+            <h2>Ulasan Pelanggan Setia Serabi Mimi</h2>
+            <blockquote cite="Bima Satria">
+                <p>"Serabi nya enak gurih banyak variannya termurah juga di cirebon. Recommended!"</p>
+                <footer>— JAKA AJAH., Cirebon Kota</footer>
+            </blockquote>
+        </section>
+        
+        <section id="kontak-info" class="container">
+            <h2>Hubungi & Kunjungi Kami</h2>
+            <p>Pesan sekarang dan nikmati serabi hangat khas Cirebon! Kami melayani pemesanan untuk acara dan jumlah besar.</p>
+            
+            <a href="https://wa.me/6281234567890?text=Halo%20Mimi%20Cirebon%2C%20saya%20mau%20order%20serabi%20dalam%20jumlah%20besar." 
+                class="whatsapp-button" style="border-radius: 4px; padding: 15px 30px; font-size: 1.1em;" target="_blank">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> CHAT ADMIN SERABI MIMI
+            </a>
+            
+            <div class="kontak-detail">
+                <div class="detail-item">
+                    <strong><i class="fa fa-clock"></i> Jam Operasional</strong>
+                    <p>Senin - Jumat: 08.00 - 20.00 WIB</p>
+                    <p>Sabtu - Minggu: 07.00 - 21.00 WIB</p>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa fa-map-marker-alt"></i> Lokasi Outlet</strong>
+                    <p>Cirebon, Jawa Barat</p>
+                    <p>Detail alamat lengkap akan dikonfirmasi via WhatsApp.</p>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa fa-envelope"></i> Informasi Lain</strong>
+                    <p>Email: <a href="mailto:info@serabimimicirebon.com">jakakaj.jk@gmail.com</a></p>
+                    <p>Nomor Kontak: <a href="tel:+6281234567890">0857-9832-3106</a></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Hak Cipta &copy; 2025 SERABI MIMI CIREBON. | Cita Rasa Khas Cirebon</p>
+        <p>Hubungi Kami: <a href="https://wa.me/6281234567890" target="_blank">62 857 9832 3106</a></p>
+    </footer>
+
+</body>
+</html>
