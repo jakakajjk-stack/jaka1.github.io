@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JareCirebon: Blog Informasi Kota Wali dan Mega Mendung</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ==================================== */
+        /* VARIABEL WARNA (Modern Blog Style) */
+        /* ==================================== */
+        :root {
+            --color-primary: #1F2937; /* Dark Blue/Black */
+            --color-accent: #EF4444; /* Merah Menyala/Tomato Red (Aksen) */
+            --color-text: #374151;
+            --color-background: #F9FAFB;
+            --color-card-bg: #ffffff;
+            --color-link: #3B82F6;
+        }
+
+        /* ==================================== */
+        /* STYLING DASAR DAN FONT */
+        /* ==================================== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* ==================================== */
+        /* HEADER DAN NAVIGASI */
+        /* ==================================== */
+        .header {
+            background-color: var(--color-primary);
+            padding: 18px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            padding: 5px 0;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+        
+        /* ==================================== */
+        /* GRID KARTU (KATEGORI) */
+        /* ==================================== */
+        #categories {
+            padding: 60px 0;
+        }
+
+        #categories h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            position: relative;
+        }
+        
+        #categories h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            /* Layout responsif: 1 kolom di mobile, 2/3 kolom di desktop */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--color-card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E5E7EB;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* Gambar placeholder dengan filter agar lebih rapi */
+            filter: grayscale(10%); 
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            color: var(--color-primary);
+            font-size: 1.4em;
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .card-content p {
+            font-size: 0.9em;
+            color: #6B7280;
+        }
+
+        .card-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .card-link:hover {
+            color: #B91C1C; /* Warna merah lebih gelap */
+        }
+        
+        /* ==================================== */
+        /* HERO SECTION */
+        /* ==================================== */
+        #hero {
+            background-color: #3B82F6; 
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: white;
+        }
+        #hero p {
+            font-size: 1.3em;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        /* ==================================== */
+        /* FOOTER */
+        /* ==================================== */
+        .footer {
+            background-color: var(--color-primary);
+            color: #D1D5DB;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-bar">
+            <div class="logo">
+                <h1>JARECIREBON</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#categories">Jelajah</a>
+                <a href="#about">Tentang</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Cirebon: Kota Wali, Budaya, dan Kuliner</h1>
+            <p>Berita terbaru, sejarah mendalam, destinasi wisata terbaik, dan kelezatan kuliner khas Cirebon. Semuanya ada di JARECIREBON.</p>
+        </div>
+    </section>
+
+    <section id="categories" class="container">
+        <h2>Kategori Pilihan JareCirebon</h2>
+
+        <div class="card-grid">
+            
+            <div class="card">
+                <img src="https://akcdn.detik.net.id/community/media/visual/2024/02/05/empat-keraton-yang-ada-di-cirebon-2_169.jpeg?w=700&q=90" alt="Keraton Kasepuhan" class="card-image">
+                <div class="card-content">
+                    <h3><i class="fas fa-landmark"></i> Sejarah & Keraton</h3>
+                    <p>Mendalami kisah Kesultanan Cirebon, Keraton Kasepuhan, Kanoman, dan peran Sunan Gunung Jati.</p>
+                    <a href="https://www.detik.com/jabar/cirebon-raya/d-7178123/wisata-sejarah-dan-budaya-jangan-lupa-berkunjung-ke-4-keraton-di-cirebon" class="card-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn0-production-images-kly.akamaized.net/B3oKAwg9yM56ofM62k7OsDE3hps=/640x360/smart/filters:quality(75):strip_icc()/kly-media-production/medias/2553491/original/039162600_1545366282-capture-20181221-112253.jpg" alt="Empal Gentong" class="card-image">
+                <div class="card-content">
+                    <h3><i class="fas fa-utensils"></i> Kuliner Khas</h3>
+                    <p>Panduan lengkap Empal Gentong, Nasi Jamblang, Tahu Gejrot, dan rekomendasi tempat makan legendaris Cirebon.</p>
+                    <a href="https://www.liputan6.com/hot/read/4509038/18-kuliner-cirebon-yang-paling-terkenal-enak-dan-bikin-ketagihan?page=2" class="card-link">Cicipi Kelezatannya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/%22%2Barya%2B%22_%EA%A6%8F%EA%A6%AE%EA%A6%B1%EA%A6%A4%EA%A7%80_%EA%A6%AE%EA%A6%B6%EA%A6%B1%EA%A6%A0_%EA%A6%A7%EA%A6%A0%EA%A6%B6%EA%A6%8F%EA%A7%80_%EA%A6%A0%EA%A6%BF%EA%A6%B8%EA%A6%B1%EA%A7%80%EA%A6%A9%EA%A6%B6_kawasan_wisata_batik_trusmi_2019.jpg/500px-%22%2Barya%2B%22_%EA%A6%8F%EA%A6%AE%EA%A6%B1%EA%A6%A4%EA%A7%80_%EA%A6%AE%EA%A6%B6%EA%A6%B1%EA%A6%A0_%EA%A6%A7%EA%A6%A0%EA%A6%B6%EA%A6%8F%EA%A7%80_%EA%A6%A0%EA%A6%BF%EA%A6%B8%EA%A6%B1%EA%A7%80%EA%A6%A9%EA%A6%B6_kawasan_wisata_batik_trusmi_2019.jpg" alt="Batik Trusmi" class="card-image">
+                <div class="card-content">
+                    <h3><i class="fas fa-globe-asia"></i> Tempat Wisata</h3>
+                    <p>Destinasi liburan terbaik, mulai dari Trusmi (Batik Mega Mendung), Goa Sunyaragi, hingga pantai-pantai Cirebon.</p>
+                    <a href="https://travel.kompas.com/read/2022/05/07/091104727/6-tempat-wisata-dekat-pusat-oleh-oleh-bt-batik-trusmi-cirebon?page=all" class="card-link">Temukan Destinasi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://awsimages.detik.net.id/community/media/visual/2023/08/09/komplek-permakaman-sunan-gunung-jati-1_169.jpeg?w=600&q=90" alt="Makam Sunan Gunung Jati" class="card-image">
+                <div class="card-content">
+                    <h3><i class="fas fa-mosque"></i> Keagamaan & Ziarah</h3>
+                    <p>Informasi mengenai pusat ziarah Cirebon, seperti Makam Sunan Gunung Jati dan Masjid Agung Sang Cipta Rasa.</p>
+                    <a href="https://www.detik.com/jabar/budaya/d-6873882/mengenal-lebih-dalam-9-pintu-di-komplek-makam-sunan-gunung-jati" class="card-link">Lihat Info Ziarah <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://akcdn.detik.net.id/community/media/visual/2025/07/07/tampilan-balai-kota-cirebon-dengan-sentuhan-bata-merah-1751887601332.jpeg?w=700&q=90" alt="Arsitektur Kota" class="card-image">
+                <div class="card-content">
+                    <h3><i class="fas fa-camera"></i> Galeri Visual</h3>
+                    <p>Kumpulan foto arsitektur unik, *street photography*, dan keindahan visual Kota Cirebon lainnya (Portofolio).</p>
+                    <a href="https://www.detik.com/jabar/foto/d-8007918/potret-11-bangunan-tua-yang-bisa-dikunjungi-saat-liburan-di-cirebon" class="card-link">Lihat Galeri Foto <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="data:image/jpeg;base64,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" alt="Tari Topeng" class="card-image">
+                <div class="card-content">
+                    <h3><i class="fas fa-paint-brush"></i> Seni & Budaya</h3>
+                    <p>Informasi tentang kesenian tradisional Cirebon, mulai dari Tari Topeng, Wayang, hingga kesenian Pesisir lainnya.</p>
+                    <a href="https://www.batiqa.com/id/hotels/cirebon/read-article/eng-Menjelajahi-Keindahan-Budaya-Cirebon-Perpaduan-Unik-Tradisi-dan-Modernitas" class="card-link">Jelajahi Budaya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <section id="about" class="container" style="text-align: center; padding: 40px 0;">
+        <h2>Tentang JareCirebon</h2>
+        <p>JareCirebon adalah sumber informasi Anda untuk mengetahui semua hal tentang Cirebon. Kami berkomitmen menyajikan konten yang akurat, menarik, dan informatif bagi warga maupun wisatawan.</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 JARECIREBON. All rights reserved. | Dibuat dengan semangat Kota Wali.</p>
+    </footer>
+
+</body>
+</html>
